@@ -2,8 +2,8 @@
     "id": "arcade",
     "name": "arcade",
     "nickname": "arcade",
-    "thumbnailName": "MakeCode Arcade",
-    "title": "Microsoft MakeCode Arcade",
+    "thumbnailName": "RSMCA",
+    "title": "RSMCA",
     "description": "Develop your programming skills by quickly creating and modding retro arcade games with Blocks and JavaScript in the MakeCode editor",
     "corepkg": "device",
     "cloud": {
@@ -462,7 +462,7 @@
         "useEditor": true,
         "log": true,
         "editorTheme": {
-            "graphBackground": "#d9d9d9",
+            "graphBackground": "#000080",
             "lineColors": [
                 "#009DDC",
                 "#FB48C7",
