@@ -1,0 +1,44 @@
+name: Build and Deploy Custom Arcade
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-size: 18
+
+      - name: Install PXT Engine & Compile
+        run: |
+          npm install -g pxt
+          npm install
+          pxt buildtarget --pages
+
+      - name: Upload Static Web Assets
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './built/web'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Site Live to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
