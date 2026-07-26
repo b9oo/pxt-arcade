@@ -542,7 +542,7 @@
         "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
         "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
         "githubUrl": "https://github.com/microsoft/pxt-arcade",
-        "boardName": "Arcade",
+        "boardName": "RSMCA",
         "addNewTypeScriptFile": true,
         "docMenu": [
             {
@@ -619,7 +619,7 @@
             "arrays": "#FF8F08",
             "functions": "#1446A0"
         },
-        "defaultColorTheme": "arcade-orange",
+        "defaultColorTheme": "arcade-blue",
         "highContrastColorTheme": "pxt-high-contrast",
         "simAnimationEnter": "fly right in",
         "simAnimationExit": "fly right out",
