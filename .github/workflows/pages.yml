@@ -19,13 +19,20 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-size: 18
+          node-version: 16
 
-      - name: Install PXT Engine & Compile
+      - name: Install PXT Engine & Core Target Libraries
         run: |
           npm install -g pxt
+          npm install pxt-arcade
           npm install
+          
+      - name: Compile Static App Assets
+        run: |
+          pxt target arcade
           pxt buildtarget --pages
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
 
       - name: Upload Static Web Assets
         uses: actions/upload-pages-artifact@v3
